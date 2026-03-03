@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* AirLens Color System - Deep Forest Charcoal Theme */
+    --background: 150 12% 7%; /* #0d1310 */
+    --foreground: 0 0% 96%; /* #f4f4f4 */
+    --card: 150 12% 10%;
+    --card-foreground: 0 0% 96%;
+    --popover: 150 12% 7%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 150 12% 7%;
+    --secondary: 150 8% 15%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 150 8% 18%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 150 12% 7%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100% / 0.1;
+    --input: 150 8% 15%;
+    --ring: 0 0% 100%;
+    --radius: 0.5rem;
+    
+    /* Custom properties */
+    --forest-dark: #0d1310;
+    --forest-mid: #1a2420;
+    --off-white: #f4f4f4;
+    --pure-white: #ffffff;
+    --soft-black: #1a1a1a;
+  }
+
+  .light-section {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 0% / 0.08;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Manrope', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer components {
+  /* Viewfinder overlay effect */
+  .viewfinder {
+    position: relative;
+  }
+  
+  .viewfinder::before,
+  .viewfinder::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  .viewfinder::before {
+    top: 16px;
+    left: 16px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+  }
+  
+  .viewfinder::after {
+    bottom: 16px;
+    right: 16px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+  }
+  
+  .viewfinder-corners {
+    position: relative;
+  }
+  
+  .viewfinder-corners .corner-tr,
+  .viewfinder-corners .corner-bl {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .viewfinder-corners .corner-tr {
+    top: 16px;
+    right: 16px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+  }
+  
+  .viewfinder-corners .corner-bl {
+    bottom: 16px;
+    left: 16px;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+  }
+
+  /* Hero background - keep mobile centered, adjust focal point on wider screens */
+  .hero-bg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    will-change: transform;
+  }
+
+  /* On md+ shift focal point slightly downward to keep technicians/buildings visible */
+  @media (min-width: 768px) {
+    .hero-bg {
+      /* on md+ prefer height-fit to avoid heavy zoom/cropping: fit height, shift focal point */
+      background-position: center 35%;
+      background-size: auto 100%;
+    }
+  }
+
+  /* On xl screens you may prefer a slightly different focal point or sizing */
+  @media (min-width: 1280px) {
+    .hero-bg {
+      background-position: center 30%;
+      /* keep height-fit on xl as well to reduce zoom; if you have a very large, high-res
+         image you can switch to cover or contain here. */
+      background-size: auto 100%;
+    }
+  }
+
+  /* Hero picture/img layout rules (for picture-based responsive hero) */
+  .hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (min-width: 768px) {
+    .hero-media img {
+      object-position: center 35%;
+      object-fit: cover; /* maintain coverage but shift focal point */
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-media img {
+      object-position: center 30%;
+    }
+  }
+
+  /* Navbar link utility: brand hover color and smooth transition */
+  .nav-link {
+    transition: color 200ms ease;
+  }
+
+  .nav-link:hover {
+    color: #E21B23;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .tracking-tight {
+    letter-spacing: -0.025em;
+  }
+  
+  .tracking-tighter {
+    letter-spacing: -0.05em;
+  }
+}
