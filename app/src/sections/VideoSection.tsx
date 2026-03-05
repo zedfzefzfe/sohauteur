@@ -62,7 +62,9 @@ export function VideoSection() {
                 muted
                 loop
                 controls
-                loading="lazy"
+                playsInline
+
+                preload="metadata"
               >
                 <source src="/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

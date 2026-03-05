@@ -4,7 +4,7 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: "./",
   plugins: [react()],
   resolve: {
     alias: {
@@ -12,23 +12,18 @@ export default defineConfig({
     },
   },
   build: {
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-      },
-    },
+    minify: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          'gsap': ['gsap'],
-          'lenis': ['lenis'],
-          'swiper': ['swiper'],
+          gsap: ["gsap"],
+          lenis: ["lenis"],
+          swiper: ["swiper"],
         },
       },
     },
   },
   optimizeDeps: {
-    include: ['gsap', 'lenis', 'swiper'],
+    include: ["gsap", "lenis", "swiper"],
   },
-});
+})
