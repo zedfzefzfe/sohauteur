@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
@@ -10,6 +10,7 @@ export function FeaturedProjects() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const [expandedProjects, setExpandedProjects] = useState<Record<string, boolean>>({});
 
   if (!featuredProjectsConfig.titleRegular && featuredProjectsConfig.projects.length === 0) return null;
 
@@ -55,39 +56,39 @@ export function FeaturedProjects() {
                   { clipPath: fromClip },
                   {
                     clipPath: 'inset(0% 0% 0% 0%)',
-                    duration: 1.4,
-                    ease: 'power4.inOut',
+                    duration: 1.0,
+                    ease: 'power3.inOut',
                   }
                 );
                 // Inner image scale
                 if (img) {
                   gsap.fromTo(
                     img,
-                    { scale: 1.35 },
-                    { scale: 1.1, duration: 1.8, ease: 'power3.out' }
+                    { scale: 1.3 },
+                    { scale: 1.05, duration: 1.4, ease: 'power3.out' }
                   );
                 }
               },
               once: true,
             });
 
-            // Parallax on image
-            if (img) {
-              gsap.fromTo(
-                img,
-                { yPercent: -5 },
-                {
-                  yPercent: 5,
-                  ease: 'none',
-                  scrollTrigger: {
-                    trigger: imageWrap,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 1.5,
-                  },
-                }
-              );
-            }
+            // Parallax on image - disabled for performance
+            // if (img) {
+            //   gsap.fromTo(
+            //     img,
+            //     { yPercent: -5 },
+            //     {
+            //       yPercent: 5,
+            //       ease: 'none',
+            //       scrollTrigger: {
+            //         trigger: imageWrap,
+            //         start: 'top bottom',
+            //         end: 'bottom top',
+            //         scrub: 0.5,
+            //       },
+            //     }
+            //   );
+            // }
           }
 
           // Content — staggered text reveal
@@ -168,7 +169,7 @@ export function FeaturedProjects() {
             >
               {/* Image with Viewfinder */}
               <div
-                className={`project-image-wrap relative overflow-hidden rounded-lg group cursor-pointer opacity-0 ${
+                className={`project-image-wrap relative overflow-hidden rounded-lg group cursor-pointer opacity-0 will-change-transform ${
                   index % 2 === 1 ? 'md:order-2' : ''
                 }`}
               >
@@ -199,7 +200,7 @@ export function FeaturedProjects() {
               </div>
 
               {/* Content */}
-              <div className={`project-content opacity-0 ${index % 2 === 1 ? 'md:order-1 md:text-right' : ''}`}>
+              <div className={`project-content opacity-0 will-change-transform ${index % 2 === 1 ? 'md:order-1 md:text-right' : ''}`}>
                 <div className={`project-text-item flex items-center gap-3 mb-4 ${index % 2 === 1 ? 'md:justify-end' : ''}`}>
                   <span className="text-white/50 font-body text-sm">{project.category}</span>
                   <span className="w-1 h-1 rounded-full bg-white/30" />
@@ -208,20 +209,29 @@ export function FeaturedProjects() {
                 <h3 className="project-text-item text-2xl md:text-3xl lg:text-4xl font-sans font-bold text-white tracking-tight mb-4">
                   {project.title}
                 </h3>
-                <p className="project-text-item text-white/60 font-body text-base md:text-lg leading-relaxed mb-6">
-                  {project.description}
-                </p>
-                {featuredProjectsConfig.viewProjectText && (
-                  <a
-                    href="#contact"
-                    className={`project-text-item inline-flex items-center gap-2 text-white font-body text-sm border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 group/link ${
-                      index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                <div className="mb-6">
+                  <p
+                    className={`project-text-item text-white/60 font-body text-base md:text-lg leading-relaxed transition-all duration-300 ${
+                      expandedProjects[project.id] ? '' : 'line-clamp-4'
                     }`}
                   >
-                    {featuredProjectsConfig.viewProjectText}
+                    {project.description}
+                  </p>
+                  <button
+                    onClick={() =>
+                      setExpandedProjects((prev) => ({
+                        ...prev,
+                        [project.id]: !prev[project.id],
+                      }))
+                    }
+                    className={`inline-flex items-center gap-2 text-white font-body text-sm font-semibold bg-[#E21B23] hover:bg-[#c6191c] px-6 py-2.5 rounded-full transition-all duration-300 mt-3 group/link ${
+                      index % 2 === 1 ? 'md:justify-self-end' : ''
+                    }`}
+                  >
+                    {expandedProjects[project.id] ? 'Voir moins' : 'Voir plus'}
                     <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300" />
-                  </a>
-                )}
+                  </button>
+                </div>
               </div>
             </div>
           ))}

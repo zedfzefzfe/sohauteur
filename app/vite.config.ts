@@ -11,4 +11,24 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'gsap': ['gsap'],
+          'lenis': ['lenis'],
+          'swiper': ['swiper'],
+        },
+      },
+    },
+  },
+  optimizeDeps: {
+    include: ['gsap', 'lenis', 'swiper'],
+  },
 });

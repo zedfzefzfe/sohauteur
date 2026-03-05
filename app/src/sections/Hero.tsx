@@ -272,7 +272,7 @@ export function Hero() {
           {/* Main Title */}
           <h1
             ref={titleRef}
-            className="font-sans font-extrabold text-white text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight md:leading-[1.05] mb-6"
+            className="font-sans font-extrabold text-white text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight md:leading-[1.05] mb-6 will-change-transform"
           >
             {heroConfig.title}
           </h1>
@@ -283,7 +283,7 @@ export function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div ref={ctaContainerRef} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div ref={ctaContainerRef} className="flex flex-col sm:flex-row items-center justify-center gap-4 will-change-transform">
             {/* primary hero button red */}
             <a
               href={heroConfig.ctaHref}

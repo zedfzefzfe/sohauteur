@@ -3,6 +3,7 @@ import { useLenis } from './hooks/useLenis';
 import { Hero } from './sections/Hero';
 import { IntroGrid } from './sections/IntroGrid';
 import { Services } from './sections/Services';
+import { VideoSection } from './sections/VideoSection';
 import { WhyChooseMe } from './sections/WhyChooseMe';
 import { FeaturedProjects } from './sections/FeaturedProjects';
 import { Testimonials } from './sections/Testimonials';
@@ -39,6 +40,9 @@ function App() {
 
       {/* Services - Dark Section */}
       <Services />
+
+      {/* Video section added after services */}
+      <VideoSection />
 
       {/* Why Choose Me & Stats - White Section */}
       <WhyChooseMe />

@@ -110,7 +110,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       title: "Façades & Immeubles de Grande Hauteur",
       category: "Maintenance Industrielle",
       year: "",
-      image: "/project-11.jpg",
+      image: "/port.jpeg",
       description: "Nous proposons des solutions complètes d’accès sur cordes pour les façades et bâtiments en hauteur. Nos équipes interviennent pour le nettoyage de façades en verre, pierre ou béton, la peinture extérieure résistante aux intempéries, la réparation des fissures et les travaux d’étanchéité. Nous réalisons également l’installation de façades vitrées et métalliques, la pose d’enseignes et d’éclairages en hauteur ainsi que la maintenance des toitures et des zones difficiles d’accès, garantissant sécurité et qualité d’exécution.",
     },
     {
@@ -244,7 +244,7 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
       description: "Nous utilisons uniquement du matériel certifié CE et EN, régulièrement contrôlé et entretenu pour une sécurité maximale.",
     },
   ],
-  wideImage: "/wide-image.jpg",
+  wideImage: "/wide-imag.jpg",
   wideImageAlt: "Vue panoramique d'une équipe de cordistes sur un chantier majeur",
   wideTitle: "Sécurité Avant Tout",
   wideDescription: "Chaque intervention fait l'objet d'une étude de risque détaillée et d'un plan de sécurité adapté. Notre priorité absolue : ramener chaque membre de l'équipe sain et sauf.",
@@ -398,7 +398,7 @@ export const contactConfig: ContactConfig = {
   fields: {
     name: { label: "Nom", placeholder: "Votre nom complet" },
     email: { label: "Email", placeholder: "votre@email.com" },
-    phone: { label: "Téléphone", placeholder: "+33 6 XX XX XX XX" },
+    phone: { label: "Téléphone", placeholder: "+212 6 XX XX XX XX" },
     service: { label: "Sélectionner un service", placeholder: "Quel service vous intéresse ?" },
     message: { label: "Message", placeholder: "Décrivez votre projet..." },
   },
