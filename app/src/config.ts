@@ -9,8 +9,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   language: "fr",
-  siteTitle: "Cordiste Pro - Travaux d'Accès Difficiles",
-  siteDescription: "Services professionnels de cordiste pour travaux en hauteur, maintenance industrielle et accès difficiles. Certification IRATA, sécurité garantie.",
+  siteTitle: "Cordiste Maroc | SOS Hauteur - Travaux Acrobatiques Casablanca",
+  siteDescription: "Cordiste au Maroc certifié IRATA. SOS Hauteur réalise vos travaux en hauteur, nettoyage de façades et maintenance industrielle à Casablanca. Devis gratuit.",
 };
 
 // Hero Section
@@ -31,15 +31,15 @@ export interface HeroConfig {
 
 export const heroConfig: HeroConfig = {
   backgroundImage: "/hero-bg.jpg",
-  backgroundImageAlt: "Cordiste professionnel en action sur un chantier en hauteur",
-  title: "Votre Experts en Hauteur",
-  subtitle: "Travaux d'Accès Difficiles & Maintenance en Hauteur",
+  backgroundImageAlt: "Cordiste SOS Hauteur en intervention sur façade à Casablanca, Maroc",
+  title: "Cordiste au Maroc — Experts en Travaux Acrobatiques",
+  subtitle: "Travaux d'Accès Difficiles & Maintenance en Hauteur au Maroc",
   ctaText: "Demander un Devis",
   ctaHref: "#contact",
   // set this to the filename you drop in public/
   brandLogo: "/logo.png",
-  brandLogoAlt: "Cordiste Pro logo",
-  brandName: "CORDISTE PRO",
+  brandLogoAlt: "SOS Hauteur – Cordiste Maroc",
+  brandName: "CORDISTE Maroc",
   navLinks: [
     { label: "Accueil", href: "#hero" },
     { label: "Services", href: "#services" },
@@ -66,13 +66,13 @@ export interface IntroGridConfig {
 export const introGridConfig: IntroGridConfig = {
   titleLine1: "L'Excellence en",
   titleLine2: "Hauteur",
-  description: "Depuis plus de 10 ans, nous mettons notre expertise du travail sur cordes au service de vos projets les plus ambitieux. De la maintenance industrielle aux travaux d'accès difficiles, notre équipe de cordistes certifiés IRATA garantit sécurité, précision et efficacité sur chaque intervention.",
+  description: "Depuis plus de 10 ans, nos cordistes à Casablanca mettent leur expertise du travail sur cordes au service de vos projets les plus ambitieux. De la maintenance industrielle aux travaux d'accès difficiles, notre équipe de cordistes certifiés IRATA garantit sécurité, précision et efficacité sur chaque intervention.",
   portfolioImages: [
-    { src: "/portfolio-1.jpg", alt: "Technicien effectuant des travaux de maintenance sur façade" },
-    { src: "/portfolio-2.jpg", alt: "Cordiste en inspection de structure industrielle" },
-    { src: "/portfolio-3.jpg", alt: "Équipe de cordistes sur chantier complexe" },
-    { src: "/portfolio-4.jpg", alt: "Travaux de nettoyage en hauteur sur immeuble" },
-    { src: "/portfolio-5.jpg", alt: "Installation de filets de sécurité par cordiste" },
+    { src: "/portfolio-1.jpg", alt: "Cordiste IRATA nettoyage façade vitrée à Casablanca, Maroc" },
+    { src: "/portfolio-2.jpg", alt: "Inspection de structure industrielle par cordiste certifié IRATA Maroc" },
+    { src: "/portfolio-3.jpg", alt: "Équipe de cordistes SOS Hauteur sur chantier acrobatique au Maroc" },
+    { src: "/portfolio-4.jpg", alt: "Travaux acrobatiques sur immeuble à Casablanca — nettoyage façade" },
+    { src: "/portfolio-5.jpg", alt: "Cordiste IRATA en intervention de sécurité en hauteur au Maroc" },
   ],
   accentText: " ",
 };
@@ -84,6 +84,7 @@ export interface Project {
   category: string;
   year: string;
   image: string;
+  imageAlt?: string;
   description: string;
 }
 
@@ -111,6 +112,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Maintenance Industrielle",
       year: "",
       image: "/port.jpeg",
+      imageAlt: "Travaux acrobatiques sur façade immeuble de grande hauteur à Casablanca",
       description: "Nous proposons des solutions complètes d’accès sur cordes pour les façades et bâtiments en hauteur. Nos équipes interviennent pour le nettoyage de façades en verre, pierre ou béton, la peinture extérieure résistante aux intempéries, la réparation des fissures et les travaux d’étanchéité. Nous réalisons également l’installation de façades vitrées et métalliques, la pose d’enseignes et d’éclairages en hauteur ainsi que la maintenance des toitures et des zones difficiles d’accès, garantissant sécurité et qualité d’exécution.",
     },
     {
@@ -119,6 +121,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Sécurité & Protection",
       year: "",
       image: "/project-2.jpg",
+      imageAlt: "Cordiste IRATA en maintenance industrielle sur site au Maroc",
       description: "Nous accompagnons les sites industriels avec des services spécialisés en travaux en hauteur. Nos prestations incluent l’installation et la maintenance de tuyauteries industrielles, l’entretien de silos, cyclones et tours, ainsi que la maintenance des cheminées et systèmes d’extraction. Nous assurons le traitement anticorrosion, la peinture des structures métalliques, la maintenance des réservoirs et stations énergétiques, ainsi que l’installation d’équipements industriels. Nos inspections techniques et notre maintenance préventive contribuent à la performance et à la durabilité des installations.",
     },
     {
@@ -127,6 +130,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Accès Difficiles",
       year: "",
       image: "/project-33.jpg",
+      imageAlt: "Travaux sur cordes en milieu portuaire et énergétique au Maroc",
       description: "Nous intervenons dans les environnements marins et énergétiques avec des solutions adaptées aux conditions exigeantes. Nos services comprennent la maintenance et la réparation d’infrastructures portuaires, le traitement anticorrosion de navires et yachts, ainsi que l’installation d’équipements marins. Nous réalisons également l’installation et la maintenance d’éoliennes, l’entretien des pylônes électriques et des infrastructures énergétiques, ainsi que la mise en place de réseaux électriques et télécom dans les zones isolées.",
     },
     {
@@ -135,6 +139,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Énergie Renouvelable",
       year: "",
       image: "/project-46.jpg",
+      imageAlt: "Inspection et protection d'infrastructure par cordiste certifié IRATA Maroc",
       description: "Nous assurons la maintenance et la sécurisation des ponts et structures en béton ou métalliques. Nos équipes effectuent le traitement des joints et fissures, l’installation de systèmes de protection contre les chutes de pierres, ainsi que la stabilisation des falaises et des pentes. Nous posons également des câbles et filets en acier et intervenons en terrains complexes et montagneux, garantissant la sécurité des infrastructures et des usagers.",
     },
     {
@@ -143,6 +148,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Inspection des Infrastructures",
       year: "",
       image: "/project-44.jpg",
+      imageAlt: "Nettoyage et maintenance en hauteur de grandes infrastructures au Maroc",
       description: "Nous proposons des services de maintenance et d’inspection pour les grandes installations telles que les stades, barrages et infrastructures industrielles. Nos interventions incluent le nettoyage en hauteur, la maintenance des systèmes d’éclairage et des panneaux publicitaires, l’inspection structurelle et le diagnostic technique. Nous installons également des systèmes de sécurité et assurons des interventions d’urgence afin de garantir la continuité et la sécurité des installations.",
     },
   ],
@@ -167,7 +173,7 @@ export const servicesConfig: ServicesConfig = {
   subtitle: "Nos Services",
   titleLine1: "Solutions d'Accès",
   titleLine2Italic: "Professionnelles",
-  description: "Nous proposons une gamme complète de services de travaux sur cordes, adaptés à tous types de projets en hauteur et d'accès difficiles. Notre expertise technique et notre équipement de pointe garantissent des interventions sûres et efficaces.",
+  description: "Nous proposons une gamme complète de services de travaux sur cordes au Maroc, adaptés à tous types de projets en hauteur et d'accès difficiles. Notre expertise technique et notre équipement de pointe garantissent des interventions sûres et efficaces.",
   services: [
     {
       iconName: "Camera",
@@ -233,19 +239,19 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
   featureCards: [
     {
       image: "/feature-1.jpg",
-      imageAlt: "Technicien cordiste certifié en équipement complet",
+      imageAlt: "Cordiste certifié IRATA SOS Hauteur en équipement complet",
       title: "Experts en travaux sur cordes",
-      description: "Nos équipes sont formées aux techniques d’accès difficile et utilisent du matériel professionnel certifié.",
+      description: "Nos cordistes certifiés IRATA au Maroc maîtrisent les techniques d’accès difficile et utilisent du matériel professionnel certifié.",
     },
     {
       image: "/feature-2.jpg",
-      imageAlt: "Équipement de sécurité professionnel",
+      imageAlt: "Équipement de sécurité certifié pour travaux acrobatiques Maroc",
       title: "Équipement Premium",
       description: "Nous utilisons uniquement du matériel certifié CE et EN, régulièrement contrôlé et entretenu pour une sécurité maximale.",
     },
   ],
   wideImage: "/wide-imag.jpg",
-  wideImageAlt: "Vue panoramique d'une équipe de cordistes sur un chantier majeur",
+  wideImageAlt: "Équipe de cordistes certifiés IRATA SOS Hauteur sur chantier au Maroc",
   wideTitle: "Sécurité Avant Tout",
   wideDescription: "Chaque intervention fait l'objet d'une étude de risque détaillée et d'un plan de sécurité adapté. Notre priorité absolue : ramener chaque membre de l'équipe sain et sauf.",
 };
@@ -273,38 +279,38 @@ export const testimonialsConfig: TestimonialsConfig = {
   testimonials: [
     {
       id: 1,
-      name: "Marie Dubois",
-      role: "Directrice des Opérations, Tour Horizon",
+      name: "Karim Benali",
+      role: "Directeur des Opérations, Groupe Alliances",
       image: "",
-      quote: "Cordiste Pro a réalisé l'inspection complète de notre tour en un temps record. Leur professionnalisme et leur rigueur sont exemplaires. Je les recommande sans hésitation.",
+      quote: "SOS Hauteur a réalisé l'inspection complète de notre tour en un temps record. Leur professionnalisme et leur rigueur sont exemplaires. Je les recommande sans hésitation.",
     },
     {
       id: 2,
-      name: "Pierre Martin",
-      role: "Chef de Chantier, Génie Civil France",
+      name: "Youssef El Mansouri",
+      role: "Chef de Chantier, Bouygues Maroc",
       image: "",
-      quote: "Une équipe compétente et réactive. Ils ont su s'adapter aux contraintes de notre chantier sur le pont historique avec une grande flexibilité. Travail impeccable.",
+      quote: "Une équipe compétente et réactive. Ils ont su s'adapter aux contraintes de notre chantier à Casablanca avec une grande flexibilité. Travail impeccable.",
     },
     {
       id: 3,
-      name: "Sophie Laurent",
-      role: "Responsable Maintenance, Énergie Verte",
+      name: "Fatima Zahra Idrissi",
+      role: "Responsable Maintenance, ONEE",
       image: "",
-      quote: "Interventions régulières sur nos parcs éoliens offshore. Leur expertise des conditions maritimes difficiles est un atout majeur pour nos opérations de maintenance.",
+      quote: "Interventions régulières sur nos installations techniques. Leur expertise des environnements difficiles est un atout majeur pour nos opérations de maintenance au Maroc.",
     },
     {
       id: 4,
-      name: "Jean Bernard",
-      role: "Directeur Technique, Industrie Plus",
+      name: "Rachid Chaoui",
+      role: "Directeur Technique, Sonasid",
       image: "",
-      quote: "Rapidité d'intervention et respect des normes de sécurité. Cordiste Pro est devenu notre partenaire privilégié pour tous les travaux en hauteur.",
+      quote: "Rapidité d'intervention et respect des normes de sécurité IRATA. SOS Hauteur est devenu notre partenaire privilégié pour tous les travaux en hauteur à Casablanca.",
     },
     {
       id: 5,
-      name: "Claire Moreau",
-      role: "Chef de Projet, Construction Urbaine",
+      name: "Nadia Benkirane",
+      role: "Chef de Projet, Addoha Groupe",
       image: "",
-      quote: "Cordiste Pro a su répondre à nos besoins spécifiques sur le chantier du centre commercial. Leur approche professionnelle et leur rigueur ont permis de mener à bien des interventions complexes.",
+      quote: "SOS Hauteur a su répondre à nos besoins spécifiques sur le chantier de notre résidence. Leur approche professionnelle et leur rigueur ont permis de mener à bien des interventions complexes.",
     },
   ],
 };
@@ -415,7 +421,7 @@ export const contactConfig: ContactConfig = {
   whatsappText: "Ou contactez-nous rapidement via",
   whatsappNumber: "+212608616061",
   contactImage: "/cordiste-working.jpg",
-  contactImageAlt: "Cordiste professionnel en action sur un chantier en hauteur",
+  contactImageAlt: "Cordiste SOS Hauteur en intervention sur façade à Casablanca",
 };
 
 // Footer Section

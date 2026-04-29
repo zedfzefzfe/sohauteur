@@ -176,9 +176,10 @@ export function FeaturedProjects() {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.imageAlt ?? project.title}
                     className="project-image w-full h-full object-cover will-change-transform"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
 

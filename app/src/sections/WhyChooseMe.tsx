@@ -229,7 +229,7 @@ export function WhyChooseMe() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative w-full py-24 md:py-32 bg-white"
+      className="relative w-full py-24 md:py-32 lg:pt-16 bg-white"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
@@ -261,6 +261,7 @@ export function WhyChooseMe() {
                   alt={card.imageAlt}
                   className="w-full h-full object-cover will-change-transform"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -308,34 +309,59 @@ export function WhyChooseMe() {
           )}
         </div>
 
-        {/* Wide Landscape Image */}
-        {whyChooseMeConfig.wideImage && (
-          <div ref={wideRef} className="mt-16 md:mt-24 relative rounded-lg overflow-hidden group opacity-0">
-            <div className="aspect-[21/9] md:aspect-[3/1] overflow-hidden">
-              <img
-                src={whyChooseMeConfig.wideImage}
-                alt={whyChooseMeConfig.wideImageAlt}
-                className="w-full h-full object-cover will-change-transform"
-                loading="lazy"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/60 via-transparent to-transparent" />
-            {(whyChooseMeConfig.wideTitle || whyChooseMeConfig.wideDescription) && (
-              <div className="wide-text-overlay absolute bottom-8 left-8 md:bottom-12 md:left-12 max-w-md opacity-0">
-                {whyChooseMeConfig.wideTitle && (
-                  <p className="text-white/90 font-sans font-bold text-2xl md:text-3xl mb-3">
-                    {whyChooseMeConfig.wideTitle}
-                  </p>
-                )}
-                {whyChooseMeConfig.wideDescription && (
-                  <p className="text-white/70 font-body text-sm md:text-base">
-                    {whyChooseMeConfig.wideDescription}
-                  </p>
-                )}
+        {/* IRATA Certification — mirrored 2-column layout matching "Découvrez Notre Solution" */}
+        <div ref={wideRef} className="mt-16 md:mt-24 opacity-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+
+            {/* text column — left on desktop, bottom on mobile (order-2 → order-1) */}
+            <div className="flex flex-col text-center md:text-left space-y-6 order-2 md:order-1">
+              <p className="text-softblack/50 text-xs font-body uppercase tracking-[0.15em] font-semibold">
+                Certification IRATA
+              </p>
+              <h2 className="text-5xl md:text-6xl font-sans font-bold text-softblack tracking-tight leading-[1.1]">
+                Une Équipe de
+                <br />
+                <span className="font-serif italic font-light text-softblack/70">
+                  Cordistes Certifiés IRATA
+                </span>
+              </h2>
+              <p className="text-softblack/65 font-body text-lg leading-relaxed max-w-lg">
+                Tous nos cordistes au Maroc sont certifiés IRATA (Industrial Rope Access Trade Association), la référence mondiale en matière de travaux sur cordes. Cette certification internationalement reconnue garantit le plus haut niveau de compétence, de sécurité et de professionnalisme sur chaque intervention de travail acrobatique.
+              </p>
+              <p className="text-softblack/60 font-body text-lg leading-relaxed max-w-lg">
+                Avec plus de 12 ans d'expérience et 0 accident, notre équipe incarne l'excellence des travaux en hauteur à Casablanca et partout au Maroc.
+              </p>
+              <div className="pt-2">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#E21B23] text-white font-sans font-semibold text-base rounded-full shadow-lg hover:bg-[#c6191c] hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  Découvrir Notre Équipe
+                </a>
               </div>
-            )}
+            </div>
+
+            {/* video column — right on desktop, top on mobile (order-1 → order-2) */}
+            <div className="flex justify-center md:justify-start order-1 md:order-2">
+              <div className="relative rounded-2xl shadow-xl overflow-hidden w-full sm:w-96 md:w-80 lg:w-96 aspect-[9/16]">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/hero-bg.jpg"
+                  aria-label="Vidéo de présentation de notre équipe certifiée IRATA"
+                >
+                  <source src="/new.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

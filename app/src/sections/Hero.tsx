@@ -161,7 +161,7 @@ export function Hero() {
       />
 
       {/* Dark overlay (neutral, slightly tinted) for text readability */}
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/35" />
 
       {/* Subtle texture overlay */}
       <div
@@ -198,12 +198,12 @@ export function Hero() {
 
           {/* Desktop Navigation */}
           {heroConfig.navLinks.length > 0 && (
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-6 lg:gap-10">
               {heroConfig.navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`nav-link text-sm font-body transition-colors duration-300 ${
+                  className={`nav-link text-sm lg:text-base font-body transition-colors duration-300 ${
                     isScrolled
                       ? 'text-white/80 hover:text-[#E21B23]'
                       : 'text-white/80 hover:text-[#E21B23]'
@@ -268,17 +268,18 @@ export function Hero() {
         ref={contentRef}
         className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 md:px-12 pt-24 will-change-transform"
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-2xl mx-auto text-center lg:max-w-5xl xl:max-w-6xl">
           {/* Main Title */}
           <h1
             ref={titleRef}
-            className="font-sans font-extrabold text-white text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight md:leading-[1.05] mb-6 will-change-transform"
+            className="font-sans font-extrabold text-white text-4xl md:text-4xl lg:text-6xl xl:text-7xl tracking-tight leading-tight lg:leading-[1.1] mb-6 lg:mb-8 will-change-transform"
           >
-            {heroConfig.title}
+            Cordiste au Maroc —{' '}
+            <span className="lg:block">Experts en Travaux Acrobatiques</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="font-serif italic text-white/90 text-xl md:text-2xl lg:text-3xl mb-10 tracking-wide">
+          <p className="font-serif italic text-white/90 text-xl md:text-lg lg:text-2xl xl:text-3xl mb-10 lg:mb-12 tracking-wide">
             {heroConfig.subtitle}
           </p>
 

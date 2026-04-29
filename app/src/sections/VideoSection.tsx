@@ -49,7 +49,7 @@ export function VideoSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full py-24 md:py-40 bg-white"
+      className="relative w-full py-24 md:py-40 lg:pb-20 bg-white"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -63,8 +63,8 @@ export function VideoSection() {
                 loop
                 controls
                 playsInline
-
                 preload="metadata"
+                poster="/hero-bg.jpg"
               >
                 <source src="/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

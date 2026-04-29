@@ -178,6 +178,7 @@ export function IntroGrid() {
                 alt={image.alt}
                 className="w-full h-full object-cover will-change-transform"
                 loading="lazy"
+                decoding="async"
               />
 
               {/* Hover overlay */}
