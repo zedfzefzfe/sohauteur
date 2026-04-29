@@ -274,7 +274,7 @@ export function Hero() {
             ref={titleRef}
             className="font-sans font-extrabold text-white text-4xl md:text-4xl lg:text-6xl xl:text-7xl tracking-tight leading-tight lg:leading-[1.1] mb-6 lg:mb-8 will-change-transform"
           >
-            Cordiste au Maroc —{' '}
+            Cordiste au Maroc{' '}
             <span className="lg:block">Experts en Travaux Acrobatiques</span>
           </h1>
 
